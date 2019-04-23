@@ -9,8 +9,8 @@ pipeline{
 		}
 		stage('TestBuild'){
 			steps{
-				bat 'javac -cp src\\junit-4.12.jar src\\SimpleCalculator.java src\\SimpleCalculatorTests.java'
-				bat 'java -cp src\\junit-4.12.jar;src\\hamcrest-core-1.3.jar;. org.junit.runner.JUnitCore src\\SimpleCalculatorTests'
+				bat 'cd src && javac -cp junit-4.12.jar SimpleCalculator.java SimpleCalculatorTests.java'
+				bat 'cd src && java -cp junit-4.12.jar;hamcrest-core-1.3.jar;. org.junit.runner.JUnitCore SimpleCalculatorTests'
 				}
 		}
 	}	
